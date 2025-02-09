@@ -1,0 +1,157 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+}
+body {
+  background-color: #a6c4e8;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.wrapper {
+  position: relative;
+  background-color: #ffffff;
+  width: 90%;
+  max-width: 500px;
+  padding: 1.5em;
+  border-radius: 1em;
+  perspective: 800px;
+  transform: none;
+  left: 0;
+  top: 0;
+}
+.credit-card {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  aspect-ratio: 1.59/1;
+  margin: auto;
+  transform-style: preserve-3d;
+  transition: 0.3s;
+}
+.card-front,
+.card-back {
+  padding: 1.5em 1em;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#33a4f8, #206df9);
+  border-radius: 1em;
+  backface-visibility: hidden;
+}
+.card-front {
+  padding: 2em 1em;
+}
+.branding {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.branding img {
+  width: clamp(30px, 8vw, 50px);
+}
+.card-back {
+  position: absolute;
+  transform: rotateY(180deg);
+}
+.card-number {
+  color: #ffffff;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  font-size: clamp(0.6em, 3vw, 0.8em);
+  margin-top: 2em;
+}
+.details {
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5em;
+  font-size: clamp(0.6em, 3vw, 0.8em);
+}
+.details span {
+  display: block;
+}
+.details #card-holder-name {
+  text-transform: uppercase;
+}
+.card-back .black-strip {
+  position: relative;
+  background-color: #000000;
+  height: 40px;
+  top: 1.5em;
+}
+.card-back .white-strip {
+  top: 2.5em;
+  position: relative;
+  text-align: right;
+}
+.card-back .white-strip span {
+  margin-right: 1em;
+}
+.card-back .white-strip div {
+  height: 30px;
+  background-color: #ffffff;
+  margin-top: 0.5em;
+}
+.card-back .visa-logo {
+  position: absolute;
+  width: clamp(30px, 8vw, 50px);
+  margin-top: 3em;
+  right: 1em;
+}
+form {
+  margin-top: 1.5em;
+}
+label,
+input {
+  display: block;
+}
+label {
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+input {
+  width: 100%;
+  border: 1px solid #000000;
+  padding: 0.8em 0.5em;
+  border-radius: 0.5em;
+  font-size: clamp(14px, 3vw, 16px);
+}
+input:not(:last-child) {
+  margin-bottom: 1em;
+}
+form .date-cvv {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    padding: 3em;
+  }
+  
+  .date-cvv {
+    flex-direction: row;
+    gap: 1em;
+  }
+  
+  .card-front,
+  .card-back {
+    padding: 2em 1em;
+  }
+  
+  .card-back .black-strip {
+    height: 50px;
+    top: 2em;
+  }
+  
+  .card-back .white-strip {
+    top: 3em;
+  }
+}
